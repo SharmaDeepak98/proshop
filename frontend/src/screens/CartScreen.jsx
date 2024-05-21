@@ -29,10 +29,10 @@ const CartScreen = () => {
     dispatch(removeFromCart(id));
   };
 
-  const checkHandler=()=>{
-navigate('/login?redirect=/shipping')
-  }
-
+  
+  const checkHandler = () => {
+    navigate("/login?redirect=/shipping");
+  };
 
   return (
     <Row>
@@ -72,7 +72,11 @@ navigate('/login?redirect=/shipping')
                     </Form.Control>
                   </Col>
                   <Col md={"2"}>
-                    <Button type="button" variant="outline-danger" onClick={()=>removeFromCartHandler(item._id)}>
+                    <Button
+                      type="button"
+                      variant="outline-danger"
+                      onClick={() => removeFromCartHandler(item._id)}
+                    >
                       <FaTrash />
                     </Button>
                   </Col>
@@ -91,11 +95,17 @@ navigate('/login?redirect=/shipping')
                 items
               </h3>
               ${" "}
-              {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
+              {cartItems
+                .reduce((acc, item) => acc + item.qty * item.price, 0)
+                .toFixed(2)}
             </ListGroupItem>
 
             <ListGroupItem>
-              <Button type="button" disabled={cartItems.length === 0} onClick={checkHandler}>
+              <Button
+                type="button"
+                disabled={cartItems.length === 0}
+                onClick={checkHandler}
+              >
                 Proceed to Checkout
               </Button>
             </ListGroupItem>
