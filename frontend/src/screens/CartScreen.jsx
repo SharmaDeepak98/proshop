@@ -71,6 +71,7 @@ const CartScreen = () => {
                       ))}
                     </Form.Control>
                   </Col>
+                  <Col md={2}>${item.price}</Col>
                   <Col md={"2"}>
                     <Button
                       type="button"
